@@ -7,16 +7,159 @@
     --dark-gray: hsl(0, 0%, 59%);
 
     /* Fonts */
-    --font-size: 1.125rem;
+    --font-size: 0.925rem;
+    --font-size-header: 1.125rem;
     --font-kumbh: 'Kumbh Sans', sans-serif;
 }   
 
-footer .attribution { 
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-kumbh);
+    background-color: var(--dark-cyan);
+    margin: unset; 
+}
+
+    main {
+        position: relative;
+        width: 100%;  
+        overflow: hidden;   
+    }
+
+    main::before, 
+    main::after{
+        content: '';
+        position: absolute;
+        width: 978px;
+        height: 978px;
+        z-index: -99;
+    }
+
+    main::before{ 
+        background-image: url('./images/bg-pattern-top.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: -550px;
+        left: -350px;
+    }
+
+    main::after{
+        background-image: url('./images/bg-pattern-bottom.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: -550px;
+        right: -350px;  
+    }
+    
+    main .main-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;   
+    }
+
+        main .main-container .container,
+        main .main-container .container .img-container img {
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+
+        main .main-container .container .content {
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+            main .main-container .container .img-container {
+                height: 140px;
+            }
+
+                main .main-container .container .img-container img {
+                    max-width: 100%;
+                    max-height: 100%; 
+                    object-fit: cover;
+                }
+
+            main .main-container .container .text-container {
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+
+            main .main-container .container .text-container .content-header h1 {
+                color: var(--desaturated-blue);
+                font-size: var(--font-size-header);
+                margin: unset;
+            }
+
+            main .main-container .container .text-container .content-header p {
+                color: var(--dark-gray);
+                text-align: center;
+                margin: 5px 0 25px;
+            }
+
+            main .main-container .container .text-container .profile-image {
+                position: absolute;
+                top: -50px;
+            }
+            
+            main .main-container .container .text-container .profile-image img {
+                border-radius: 50%;
+                border: 5px solid #fff;
+            }
+
+            main .main-container .container .text-container .content-header {
+                margin-top: 75px;
+            }
+
+    main .main-container .container .content {
+        background-color: #FFF;
+        display: block;
+        padding-bottom: 5px;
+    }
+
+    main .main-container .container .content hr {
+        margin: unset;
+        background-color: var(--dark-gray);
+        height: 1px;
+        opacity: 0.2;
+    }
+
+    main .main-container .container .stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 35px;
+    }
+
+    .stats p {
+        font-size: var(--font-size-header);
+        font-weight: 700;
+        color: var(--desaturated-blue);
+        text-transform: uppercase;
+    }
+
+    .stats p span {
+        font-size: 9px;
+        letter-spacing: 0.3em;
+        display: block;
+        color: var(--dark-gray);
+        font-weight: 700;
+        margin-top: 5px;
+        text-transform: capitalize;
+    }
+
+.text-center{
+    text-align: center;
+}
+
+.attribution { 
     font-size: 11px; 
     text-align: center; 
     margin-bottom: 20px;
+    z-index: 99;
 }
 
-footer .attribution a { 
+.attribution a { 
     color: hsl(228, 45%, 44%); 
 }
